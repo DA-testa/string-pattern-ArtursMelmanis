@@ -1,5 +1,5 @@
 # python3
-
+import sys
 def read_input():
     inp = input().rstrip()
     if inp == 'I':
@@ -32,5 +32,9 @@ def get_occurrences(pattern, text):
 
 # this part launches the functions
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
+    else:
+        filename = '06'
     print_occurrences(get_occurrences(*read_input()))
 
